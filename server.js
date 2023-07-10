@@ -1,5 +1,6 @@
 const express = require('express');
-const sequelize = require('/db/index.js')
+// Importing our DB connection
+const db = require('./db/connection.js');
 
 // Create app variable and PORT
 const app = express();

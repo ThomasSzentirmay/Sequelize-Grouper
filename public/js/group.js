@@ -15,7 +15,8 @@ function handleGroupSubmit(event) {
         })
     }).then(res => {
         alert('Group successfully added!');
+        nameInput.value = '';
     });
 };
 
-groupForm.addEventListener(submit, handleGroupSubmit);
+groupForm.addEventListener('submit', handleGroupSubmit);

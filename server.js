@@ -18,7 +18,7 @@ app.use(express.static('public')); // Opens public as the root on the client sid
 app.use('/', [api_routes, view_routes]);
 
 // Connect to the db and create all tables based off of our models
-db.sync({force: true})
+db.sync({force: false})
     .then(() => {
         // Start server
         app.listen(PORT, () => console.log('Started server on port %s', PORT));

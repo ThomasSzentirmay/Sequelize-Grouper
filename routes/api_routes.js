@@ -4,7 +4,11 @@ const Group = require('../models/Group');
 
 // Create Group
 router.post('/api/group', (clientReq, serverRes) => {
-    serverRes.send('test works!');
+    Group.create({
+        name: clientReq.body.name
+    }).then(newGroup => {
+        serverRes.send('group added successfully!')
+    });
 });
 
 module.exports = router;

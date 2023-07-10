@@ -10,5 +10,9 @@ const PORT = process.env.PORT || 3333;
 app.use(express.json()); // Allows the client/browser to send json in a request
 app.use(express.static('public')); // Opens public as the root on the client side
 
-// Start server
-app.listen(PORT, () => console.log('Started server on port %s', PORT));
+// Connect to the db and create all tables based off of our models
+db.sync()
+    .then(() => {
+        // Start server
+        app.listen(PORT, () => console.log('Started server on port %s', PORT));
+    }); 

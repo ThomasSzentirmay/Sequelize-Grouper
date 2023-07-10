@@ -30,3 +30,5 @@ Student.init({
     sequelize: db,
     modelName: 'student'
 });
+
+module.exports = Student;

@@ -5,7 +5,7 @@ function handleGroupSubmit(event) {
 
     const nameInput = document.querySelector('#group-name-input');
 
-    fetch('/group', {
+    fetch('/api/group', {
         method: 'POST',
         headers: {
             'CONTENT-Type': 'application/json'

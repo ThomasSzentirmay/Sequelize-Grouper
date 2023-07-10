@@ -5,3 +5,28 @@
 body {
     padding: 5%;
 }
+
+body h1 {
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 6px 10px;
+    color: #333;
+    border: 1px solid #333;
+}
+
+nav a:first-child {
+    margin-right: 15px;
+}
+
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}

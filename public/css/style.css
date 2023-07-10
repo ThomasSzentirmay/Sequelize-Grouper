@@ -22,11 +22,11 @@ nav a {
     border: 1px solid #333;
 }
 
-nav a:first-child {
+nav a:not(:last-child) {
     margin-right: 15px;
 }
 
-nav a:hover {
+nav a:hover, nav a.active {
     background-color: #333;
     color: #fff;
 }

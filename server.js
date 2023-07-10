@@ -14,9 +14,7 @@ app.use(express.json()); // Allows the client/browser to send json in a request
 app.use(express.static('public')); // Opens public as the root on the client side
 
 // Load Routes
-app.use('/', [
-    api.routes
-]);
+app.use('/', api_routes);
 
 // Connect to the db and create all tables based off of our models
 db.sync()

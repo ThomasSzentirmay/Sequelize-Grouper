@@ -10,14 +10,20 @@ router.post('/api/group', (clientReq, serverRes) => {
         name: clientReq.body.name
     }).then(newGroup => {
         serverRes.send('group added successfully!')
-    });
+    }).catch(err => {
+        console.log(err.errors);
+    })
 });
 
 // GET all groups
 router.get('/api/groups', (clientReq, serverRes) => {
     // Retrieve all groups from the db
-    Group.findAll()
-    .then(groups => {
+    Group.findAll({
+        include: {
+            model: Student,
+            order: [[Student, 'groupId', 'Asc']]
+        }
+    }).then(groups => {
         serverRes.send(groups)
     });
 });

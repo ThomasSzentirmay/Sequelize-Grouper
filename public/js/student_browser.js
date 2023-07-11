@@ -18,10 +18,10 @@ function handleStudentSubmit(event) {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            first_name: firstInput.ariaValueMax,
-            last_name: lastInput.ariaValueMax,
-            email: emailInput.ariaValueMax,
-            group_id: groupSelect.value
+            first_name: firstInput.value,
+            last_name: lastInput.value,
+            email: emailInput.value,
+            groupId: groupSelect.value
         })
     }).then(res => {
         alert('Student added successfully!')

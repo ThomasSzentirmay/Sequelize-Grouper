@@ -23,6 +23,9 @@ router.get('/api/groups', (clientReq, serverRes) => {
 });
 
 // Create Student
-
+router.post('/api/student', (clientReq, serverRes) => {
+    Student.create(clientReq.body)
+        .then(() => serverRes.send('Student added'));
+});
 
 module.exports = router;

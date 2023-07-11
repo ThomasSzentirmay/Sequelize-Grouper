@@ -36,6 +36,10 @@ function getGroups() {
     fetch('/api/groups')
         .then(res => res.json())
         .then(data => {
+            if(!data.length) {
+                alert('Please create a group to add students');
+                return window.location = '/group';
+            }
             // Loop over our data array of groups
             data.forEach(groupObj => {
                 // For each group object, insert an option element into the groupSelect

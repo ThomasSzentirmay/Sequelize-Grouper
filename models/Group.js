@@ -20,6 +20,8 @@ Group.init({
     modelName: 'group'
 });
 
-Group.hasMany
+// 'Has many' situation so creating the link between them
+Group.hasMany(Student);
+Student.belongsTo(Group);
 
 module.exports = Group;

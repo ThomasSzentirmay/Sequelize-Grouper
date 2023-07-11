@@ -31,3 +31,15 @@ nav a:hover, nav a.active {
     background-color: #333;
     color: #fff;
 }
+
+form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* form > * means all direct children of form will have these styles */
+form > * {
+    padding: 7px 10px;
+    margin: 3px 0px;
+}

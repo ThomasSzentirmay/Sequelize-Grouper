@@ -6,4 +6,8 @@ router.get('/group', (clientReq, serverRes) => {
     serverRes.sendFile(path.join(__dirname, '../views/group_form.html'))
 })
 
+router.get('/student', (clientReq, clientRes) => {
+    serverRes.sendFile(path.join(__dirname, '../views/student_form.html'))
+})
+
 module.exports = router;

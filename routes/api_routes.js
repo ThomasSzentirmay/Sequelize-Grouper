@@ -9,9 +9,12 @@ router.post('/api/group', (clientReq, serverRes) => {
     Group.create({
         name: clientReq.body.name
     }).then(newGroup => {
-        serverRes.send('group added successfully!')
+        serverRes.send('Group added successfully!')
     }).catch(err => {
-        console.log(err.errors);
+        serverRes.send({
+            message: err.message,
+            error: true
+        })
     })
 });
 

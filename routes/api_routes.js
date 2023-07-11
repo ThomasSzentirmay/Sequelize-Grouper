@@ -11,4 +11,15 @@ router.post('/api/group', (clientReq, serverRes) => {
     });
 });
 
+// Create Student
+router.post('/api/student', (clientReq, serverRes) => {
+    Student.create({
+        firstInput: clientReq.body.firstInput
+        lastInput: clientReq.body.lastInput
+        emailInput: clientReq.body.emailInput
+    }).then(newGroup => {
+        serverRes.send('group added successfully!')
+    });
+});
+
 module.exports = router;

@@ -1,4 +1,5 @@
 const express = require('express');
+const {engine} = require('express-handlebars');
 // Importing our DB connection
 const db = require('./db/connection.js');
 
@@ -13,6 +14,14 @@ const PORT = process.env.PORT || 3333;
 // Middleware
 app.use(express.json()); // Allows the client/browser to send json in a request
 app.use(express.static('public')); // Opens public as the root on the client side
+
+// Setup handlebars template engine
+app.engine('handlebars', engine({
+    // pointing to a layout directory that allows you to avoid repeated HTML code
+    layoutsDir: './views/layouts'
+}));
+app.set('view engine', 'handlebars');
+app.set('views', './views');
 
 // Load Routes
 app.use('/', [api_routes, view_routes]);

@@ -3,7 +3,17 @@ const path = require('path');
 
 router.get('/', (req, res) => {
     res.render('index', {
-        username: 'JD'
+        user: [
+            {
+                email: 'jd@test.com'
+            },
+            {
+                email: 'bob@test.com'
+            },
+            {
+                email: 'tom@test.com'
+            }
+        ]
     });
 })
 

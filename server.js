@@ -3,8 +3,8 @@ const express = require('express');
 const db = require('./db/connection.js');
 
 // Import routes
-const api_routes = require('./routes/api_routes.js');
-const view_routes = require('./routes/view_routes.js');
+const api_routes = require('./controllers/api_routes.js');
+const view_routes = require('./controllers/view_routes.js');
 
 // Create app variable and PORT
 const app = express();
